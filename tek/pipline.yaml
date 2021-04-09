@@ -11,22 +11,12 @@ spec:
     - name: source
       type: git
   tasks:
-    - name: posts-service
+    - name: build
       taskRef:
         name: build-docker
       params:
         - name: BUILDER_IMAGE
-          value: posts-service
-      resources:
-        inputs:
-          - name: source
-            resource: source
-    - name: editor-service
-      taskRef:
-        name: build-docker
-      params:
-        - name: BUILDER_IMAGE
-          value: editor-service
+          value: $(params.BUILDER_IMAGE)
       resources:
         inputs:
           - name: source
