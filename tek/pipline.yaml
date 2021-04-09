@@ -21,13 +21,3 @@ spec:
         inputs:
           - name: source
             resource: source
-    - name: editor-service
-      taskRef:
-        name: build-docker
-      params:
-        - name: BUILDER_IMAGE
-          value: editor-service
-      resources:
-        inputs:
-          - name: source
-            resource: source
